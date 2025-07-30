@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BMFTI - Formulir Pendaftaran</title>
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/regis.css">
+  <script src="js/theme.js"></script>
+  <script src="js/regis.js" defer></script>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <a href="index.html">BMFTI</a>
+      </div>
+      
+      <ul class="nav-menu">
+        <li class="nav-item">
+          <a href="index.html" class="nav-link">Home</a>
+        </li>
+        <li class="nav-item">
+          <a href="about.html" class="nav-link">About</a>
+        </li>
+      </ul>
+      
+      <div class="nav-right">
+        <a href="regis.html" class="nav-register">Daftar!!!</a>
+        <button id="toggle-theme" class="theme-toggle">🌙</button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="form-container">
+    <header class="form-header">
+      <h1>Formulir Pendaftaran BMFTI</h1>
+    </header>
+
+    <form id="form-daftar">
+      <div class="form-group">
+        <label for="nama">Nama Lengkap</label>
+        <input type="text" id="nama" name="nama">
+        <span class="error-message" id="error-nama"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="text" id="email" name="email">
+        <span class="error-message" id="error-email"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="telepon">Nomor Telepon</label>
+        <input type="tel" id="telepon" name="telepon">
+        <span class="error-message" id="error-telepon"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="nim">NIM</label>
+        <input type="text" id="nim" name="nim">
+        <span class="error-message" id="error-nim"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="alasan">Alasan Bergabung</label>
+        <textarea id="alasan" name="alasan" maxlength="200"></textarea>
+        <div class="char-counter" id="counter-alasan">200 Character</div>
+        <span class="error-message" id="error-alasan"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="departemen">Departemen yang Diinginkan</label>
+        <select id="departemen" name="departemen">
+          <option value="">--Pilih Departemen--</option>
+          <option value="akademik">Akademik</option>
+          <option value="bakmin">Bakat & Minat</option>
+          <option value="humas">Hubungan Masyarakat</option>
+          <option value="keukas">Keuangan & Kerjasama</option>
+          <option value="medin">Media Informasi</option>
+          <option value="pengmas">Pengabdian Masyarakat</option>
+          <option value="sekre">Kesekretariatan</option>
+        </select>
+        <span class="error-message" id="error-departemen"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="alasan-departemen">Alasan Ingin Departemen Tersebut</label>
+        <textarea id="alasan-departemen" name="alasan-departemen" maxlength="200"></textarea>
+        <div class="char-counter" id="counter-alasan-departemen">200 Character</div>
+        <span class="error-message" id="error-alasan-departemen"></span>
+      </div>
+
+      <button type="submit" class="submit-btn">Kirim Pendaftaran</button>
+    </form>
+
+    <div id="success-message" class="success-message" style="display: none;">
+      <h3>Pendaftaran Berhasil!</h3>
+      <p>Terima kasih telah mendaftar. Kami akan menghubungi Anda segera.</p>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 BMFTI</p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BMFTI - Beranda</title>
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/index.css">
+  <script src="js/theme.js"></script>
+  <script src="js/index.js" defer></script>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <a href="index.html">BMFTI</a>
+      </div>
+      
+      <ul class="nav-menu">
+        <li class="nav-item">
+          <a href="index.html" class="nav-link active">Home</a>
+        </li>
+        <li class="nav-item">
+          <a href="about.html" class="nav-link">About</a>
+        </li>
+      </ul>
+      
+      <div class="nav-right">
+        <a href="regis.html" class="nav-register">Daftar!!!</a>
+        <button id="toggle-theme" class="theme-toggle">🌙</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-main">
+    <div class="hero-container">
+      <div class="hero-left">
+        <div class="building-image">
+          <img src="Images/gedung_untar1-removebg-preview.png" alt="Gedung Universitas Tarumanagara">
+        </div>
+      </div>
+      
+      <div class="hero-right">
+        <div class="hero-content">
+          <h1 class="organization-name">
+            BMFTI
+            <div class="underline"></div>
+          </h1>
+          
+          <div class="typing-container">
+            <span id="typing-text" class="typing-text"></span>
+          </div>
+          
+          <p class="hero-description">
+            BMFTI adalah organisasi mahasiswa teknologi di kampus yang bertujuan untuk mengembangkan minat dan bakat di bidang teknologi informasi serta mencetak generasi yang siap berkontribusi membangun bangsa.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What We Have Section -->
+  <section class="what-we-have" id="what-we-have">
+    <div class="what-container">
+      <!-- Left Side - Title -->
+      <div class="what-left">
+        <div class="what-title-box" id="title-box">
+          <h2 class="what-title">WHAT WE HAVE</h2>
+        </div>
+      </div>
+      
+      <!-- Right Side - Cards -->
+      <div class="what-right">
+        <div class="facility-grid">
+          <!-- Card 1 - Olahraga -->
+          <div class="facility-card" data-facility="sports">
+            <div class="card-inner">
+              <div class="card-front">
+                <div class="facility-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="2"/>
+                    <path d="M12 1v6m0 6v6"/>
+                    <path d="m15.14 8.86 4.24-4.24m-4.24 4.24L19.38 4.62"/>
+                    <path d="m8.86 8.86-4.24-4.24m4.24 4.24L4.62 4.62"/>
+                    <path d="m15.14 15.14 4.24 4.24m-4.24-4.24L19.38 19.38"/>
+                    <path d="m8.86 15.14-4.24 4.24m4.24-4.24L4.62 19.38"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="card-back">
+                <div class="facility-image sports-bg">
+                  <div class="facility-content">
+                    <h3>Lapangan Padel Sebagai Hiburan</h3>
+                    <div class="content-underline"></div>
+                    <p>Lapangan yang dikhususkan bagi mahasiswa yang sedang merasa kelelahan mental</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 - Buku -->
+          <div class="facility-card" data-facility="study">
+            <div class="card-inner">
+              <div class="card-front">
+                <div class="facility-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/>
+                    <path d="M8 7h8"/>
+                    <path d="M8 11h8"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="card-back">
+                <div class="facility-image study-bg">
+                  <div class="facility-content">
+                    <h3>Ruang Belajar Bersama Interaktif</h3>
+                    <div class="content-underline"></div>
+                    <p>Ruang belajar aman, tentram, dan pastinya tidak akan mengganggu konsentrasi</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 - Tempat Tidur -->
+          <div class="facility-card" data-facility="dormitory">
+            <div class="card-inner">
+              <div class="card-front">
+                <div class="facility-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M2 4v16"/>
+                    <path d="M2 8h18a2 2 0 0 1 2 2v10"/>
+                    <path d="M2 17h20"/>
+                    <path d="M6 8V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v4"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="card-back">
+                <div class="facility-image dormitory-bg">
+                  <div class="facility-content">
+                    <h3>Asrama Sementara</h3>
+                    <div class="content-underline"></div>
+                    <p>Tempat untuk tidur sementara yang dipisahkan berdasarkan gender</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4 - Rumah Sakit -->
+          <div class="facility-card" data-facility="health">
+            <div class="card-inner">
+              <div class="card-front">
+                <div class="facility-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.29 1.51 4.04 3 5.5l7 7Z"/>
+                    <path d="M12 5L8 21l4-7 4 7-4-16"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="card-back">
+                <div class="facility-image health-bg">
+                  <div class="facility-content">
+                    <h3>Cek Kesehatan</h3>
+                    <div class="content-underline"></div>
+                    <p>Tempat untuk beristirahat bila tidak enak badan dan sebagai tempat untuk mengecek kesehatan</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Divider -->
+  <section class="section-divider">
+    <div class="dotted-line"></div>
+  </section>
+
+  <!-- What We've Done Section -->
+  <section class="what-weve-done" id="what-weve-done">
+    <div class="done-container">
+      <h2 class="done-title">WHAT WE'VE DONE</h2>
+      
+      <div class="done-grid">
+        <!-- Achievement Card 1 - Integrasi -->
+        <div class="achievement-card">
+          <div class="card-bg integration-bg"></div>
+          <div class="card-overlay">
+            <div class="card-content">
+              <h3 class="card-title">Integrasi Dengan Banyak Perusahaan</h3>
+              <p class="card-description">Sudah terintegrasi oleh banyak perusahaan besar seperti BCA dan Djarum Group</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Achievement Card 2 - Prestasi -->
+        <div class="achievement-card">
+          <div class="card-bg achievement-bg"></div>
+          <div class="card-overlay">
+            <div class="card-content">
+              <h3 class="card-title">Prestasi Antar Dunia</h3>
+              <p class="card-description">Lebih dari 30 prestasi yang sudah didapat lewat organisasi BMFTI</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Achievement Card 3 - Pengakuan -->
+        <div class="achievement-card">
+          <div class="card-bg recognition-bg"></div>
+          <div class="card-overlay">
+            <div class="card-content">
+              <h3 class="card-title">Diakui Oleh Amerika dan China</h3>
+              <p class="card-description">Organisasi BMFTI sudah diakui lebih dari 10 universitas dari Amerika maupun China</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Ajakan -->
+  <section class="ajakan">
+    <h2>Gabung Bersama Kami</h2>
+    <a href="regis.html" class="btn-daftar">Daftar Sekarang</a>
+  </section>
+
+  <footer>
+    <p>© 2025 BMFTI</p>
+  </footer>
+</body>
+</html>

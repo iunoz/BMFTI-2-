@@ -1,0 +1,847 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --primary-color: #3b82f6;
+  --primary-hover: #2563eb;
+  --bg-color: #ffffff;
+  --text-color: #1f2937;
+  --text-secondary: #6b7280;
+  --border-color: #e5e7eb;
+  --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  --navbar-bg: rgba(255, 255, 255, 0.95);
+  --register-bg: #ef4444;
+  --register-hover: #dc2626;
+  --dotted-line: #9ca3af;
+}
+
+[data-theme="dark"] {
+  --bg-color: #111827;
+  --text-color: #f9fafb;
+  --text-secondary: #d1d5db;
+  --border-color: #374151;
+  --shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  --navbar-bg: rgba(17, 24, 39, 0.95);
+  --register-bg: #ef4444;
+  --register-hover: #dc2626;
+  --dotted-line: #6b7280;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: all 0.3s ease;
+  padding-top: 70px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin: 0;
+}
+
+/* Hero Main Section - Full Width */
+.hero-main {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  padding: 0; 
+  margin: 0;
+  width: 100vw;
+}
+
+.hero-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  align-items: stretch; 
+  width: 100%;
+  min-height: 90vh; 
+  margin: 0;
+  max-width: none; 
+}
+
+/* Bagian Kiri - Gambar Full */
+.hero-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  width: 100%;
+}
+
+.building-image {
+  width: 100%;
+  height: 100%;
+  min-height: 90vh; 
+  border-radius: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.building-image:hover {
+  transform: scale(1.01);
+}
+
+.building-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.building-image:hover img {
+  transform: none;
+}
+
+/* Bagian Kanan - Content Full Height */
+.hero-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 60px 80px; 
+  background: var(--bg-color);
+  width: 100%;
+}
+
+.hero-content {
+  max-width: none; 
+  width: 100%;
+}
+
+/* Nama Organisasi */
+.organization-name {
+  font-size: 4.5rem; 
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 20px;
+  position: relative;
+  line-height: 1.1;
+}
+
+.underline {
+  width: 100%;
+  height: 8px; 
+  background: linear-gradient(90deg, var(--primary-color), var(--primary-hover));
+  border-radius: 4px;
+  margin-top: 15px;
+  animation: underlineGrow 1s ease-out 0.5s both;
+}
+
+@keyframes underlineGrow {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+/* Typing Container */
+.typing-container {
+  margin: 40px 0;
+  min-height: 70px;
+  display: flex;
+  align-items: center;
+}
+
+.typing-text {
+  font-size: 2.2rem; 
+  font-weight: 600;
+  color: var(--primary-color);
+  display: inline-block;
+  border: none;
+  outline: none;
+}
+
+.typing-cursor {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+/* Hero Description */
+.hero-description {
+  font-size: 1.2rem; 
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin-top: 40px;
+  text-align: justify;
+}
+
+/* What We Have Section */
+.what-we-have {
+  padding: 100px 0;
+  background: var(--bg-color);
+  overflow: hidden;
+}
+
+.what-container {
+  max-width: none;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 0px;
+  align-items: stretch;
+  min-height: 550px; /* Match card heights: 250px * 2 + 30px gap = 530px + padding */
+}
+
+/* Left Side - Title */
+.what-left {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  padding: 0;
+}
+
+.what-title-box {
+  background: linear-gradient(135deg, var(--primary-color), #8b5cf6);
+  padding: 40px 60px; 
+  width: 100%;
+  height: 550px; /* Fixed height to match cards */
+  border-radius: 0 30px 30px 0; /* Add round corners kanan atas dan kanan bawah */
+  position: relative;
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: all 0.8s ease-out;
+  box-shadow: 0 15px 35px rgba(59, 130, 246, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+[data-theme="dark"] .what-title-box {
+  background: linear-gradient(135deg, #1e40af, #6b21a8);
+  box-shadow: 0 15px 35px rgba(30, 64, 175, 0.4);
+}
+
+.what-title-box.animate-in {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.what-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  line-height: 1.2;
+  letter-spacing: 2px;
+  text-align: center;
+  margin: 0;
+}
+
+/* Right Side - Cards Grid */
+.what-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 40px; 
+  background: var(--bg-color);
+}
+
+.facility-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  width: 100%;
+  max-width: 600px;
+}
+
+/* Facility Card */
+.facility-card {
+  height: 250px;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.facility-card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  border: 2px solid var(--border-color);
+}
+
+.card-front {
+  background: #f8f9fa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+[data-theme="dark"] .card-front {
+  background: #374151;
+  border-color: #4b5563;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+  overflow: hidden;
+  position: relative;
+}
+
+/* Facility Icons */
+.facility-icon {
+  color: var(--text-color);
+  transition: all 0.3s ease;
+}
+
+.facility-icon svg {
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+/* Card Back Content */
+.facility-image {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  border-radius: 18px;
+}
+
+.facility-image::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.2));
+  border-radius: 18px;
+}
+
+/* Background Images untuk setiap fasilitas */
+.sports-bg {
+  background-image: url('../Images/padel.jpg');
+}
+
+.study-bg {
+  background-image: url('../Images/kelas.jpg');
+}
+
+.dormitory-bg {
+  background-image: url('../Images/asrama.png');
+}
+
+.health-bg {
+  background-image: url('../Images/ruangsakit.jpg');
+}
+
+/* Fallback jika gambar tidak ada */
+.sports-bg, .study-bg, .dormitory-bg, .health-bg {
+  background-color: var(--primary-color);
+}
+
+.facility-content {
+  position: relative;
+  z-index: 2;
+  padding: 20px;
+  color: white;
+  width: 100%;
+}
+
+.facility-content h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+.content-underline {
+  width: 50px;
+  height: 3px;
+  background: white;
+  margin: 8px 0;
+  border-radius: 2px;
+}
+
+.facility-content p {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  opacity: 0.9;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+/* Hover Effects untuk Card Front */
+.facility-card:hover .card-front {
+  transform: scale(1.02);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Section Divider */
+.section-divider {
+  padding: 60px 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dotted-line {
+  width: 100%;
+  max-width: none;
+  height: 2px;
+  background-image: repeating-linear-gradient(
+    to right,
+    var(--dotted-line) 0px,
+    var(--dotted-line) 15px,
+    transparent 15px,
+    transparent 30px
+  );
+}
+
+/* What We've Done Section */
+.what-weve-done {
+  padding: 100px 40px;
+  background: var(--bg-color);
+}
+
+.done-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.done-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 60px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.done-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  margin-top: 60px;
+}
+
+/* Achievement Card */
+.achievement-card {
+  position: relative;
+  height: 300px;
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow);
+}
+
+.achievement-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.card-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.3s ease;
+}
+
+.achievement-card:hover .card-bg {
+  transform: scale(1.05);
+}
+
+/* Background images for achievement cards */
+.integration-bg {
+  background-image: url('../Images/bca.jpg');
+}
+
+.achievement-bg {
+  background-image: url('../Images/prestasi.jpg');
+}
+
+.recognition-bg {
+  background-image: url('../Images/map.jpg');
+}
+
+/* Fallback backgrounds */
+.integration-bg, .achievement-bg, .recognition-bg {
+  background-color: var(--primary-color);
+}
+
+.card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(0, 0, 0, 0.3) 50%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
+  display: flex;
+  align-items: flex-end;
+  padding: 30px;
+  transition: all 0.3s ease;
+}
+
+.card-content {
+  color: white;
+  text-align: left;
+  width: 100%;
+}
+
+.card-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+.card-description {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+.achievement-card:hover .card-description {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.achievement-card:hover .card-overlay {
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.2) 0%,
+    rgba(0, 0, 0, 0.6) 50%,
+    rgba(0, 0, 0, 0.9) 100%
+  );
+}
+
+/* Ajakan Section */
+.ajakan {
+  text-align: center;
+  padding: 80px 40px; 
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
+  border-radius: 20px;
+  margin: 80px 40px; 
+  box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.ajakan::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  animation: float 6s ease-in-out infinite;
+}
+
+.ajakan h2 {
+  font-size: 2.5rem;
+  color: white;
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+
+.btn-daftar {
+  display: inline-block;
+  background: white;
+  color: var(--primary-color);
+  padding: 15px 40px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 2;
+  border: 2px solid transparent;
+}
+
+.btn-daftar:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  background: #f8fafc;
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Dark theme adjustments for ajakan */
+[data-theme="dark"] .ajakan {
+  background: linear-gradient(135deg, #1e40af, #6b21a8);
+  box-shadow: 0 10px 30px rgba(30, 64, 175, 0.4);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 40px;
+  margin-top: 40px;
+  border-top: 1px solid var(--border-color);
+  color: var(--text-secondary);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  body {
+    padding-top: 60px;
+  }
+  
+  .hero-main {
+    min-height: auto;
+  }
+  
+  .hero-container {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+  
+  .building-image {
+    min-height: 50vh;
+    border-radius: 0; 
+  }
+  
+  .hero-right {
+    padding: 40px 30px;
+  }
+  
+  .organization-name {
+    font-size: 3.5rem;
+    text-align: center;
+  }
+  
+  .typing-text {
+    font-size: 1.8rem;
+  }
+  
+  .hero-description {
+    font-size: 1rem;
+    text-align: center;
+  }
+  
+  .what-we-have {
+    padding: 80px 0;
+  }
+  
+  .what-container {
+    grid-template-columns: 1fr;
+    gap: 50px;
+    min-height: auto;
+  }
+  
+  .what-left {
+    padding: 0 20px;
+  }
+
+  .what-title-box {
+    border-radius: 20px;
+    margin: 0 auto;
+    max-width: 400px;
+    padding: 40px 30px;
+    height: auto;
+    min-height: 200px;
+    width: auto;
+  }
+  
+  .what-title {
+    font-size: 2.2rem;
+  }
+  
+  .facility-grid {
+    gap: 20px;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .facility-card {
+    height: 160px;
+  }
+  
+  .facility-content h3 {
+    font-size: 1.1rem;
+  }
+  
+  .facility-content p {
+    font-size: 0.8rem;
+  }
+  
+  .section-divider {
+    padding: 40px 0;
+  }
+  
+  .what-weve-done {
+    padding: 80px 20px;
+  }
+  
+  .done-title {
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+  }
+  
+  .done-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .achievement-card {
+    height: 250px;
+  }
+  
+  .ajakan {
+    margin: 60px 20px;
+    padding: 60px 20px;
+    border-radius: 15px;
+  }
+  
+  .ajakan h2 {
+    font-size: 2rem;
+  }
+  
+  .btn-daftar {
+    padding: 12px 30px;
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-right {
+    padding: 30px 20px;
+  }
+  
+  .building-image {
+    min-height: 40vh;
+  }
+  
+  .organization-name {
+    font-size: 2.8rem;
+  }
+  
+  .typing-text {
+    font-size: 1.5rem;
+  }
+  
+  .hero-description {
+    font-size: 0.9rem;
+    text-align: left;
+  }
+  
+  .what-we-have {
+    padding: 60px 15px;
+  }
+  
+  .what-title-box {
+    padding: 40px 25px;
+  }
+  
+  .what-title {
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+  }
+  
+  .facility-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    max-width: 300px;
+  }
+  
+  .facility-card {
+    height: 150px;
+  }
+  
+  .facility-icon svg {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .facility-content {
+    padding: 15px;
+  }
+  
+  .facility-content h3 {
+    font-size: 1rem;
+  }
+  
+  .facility-content p {
+    font-size: 0.75rem;
+  }
+  
+  .section-divider {
+    padding: 30px 0;
+  }
+  
+  .what-weve-done {
+    padding: 60px 15px;
+  }
+  
+  .done-title {
+    font-size: 1.8rem;
+  }
+  
+  .achievement-card {
+    height: 200px;
+  }
+  
+  .card-content {
+    padding: 20px;
+  }
+  
+  .card-title {
+    font-size: 1.2rem;
+  }
+  
+  .card-description {
+    font-size: 0.8rem;
+  }
+  
+  .ajakan {
+    margin: 40px 15px;
+    padding: 60px 15px;
+    border-radius: 12px;
+  }
+  
+  .ajakan h2 {
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+  }
+  
+  .btn-daftar {
+    padding: 12px 30px;
+    font-size: 1rem;
+  }
+
+  footer {
+    padding: 30px 15px;
+  }
+}
